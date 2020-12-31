@@ -5,8 +5,9 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import {Bell} from 'react-feather';
-import Avatar from '@material-ui/core/Avatar';
 import { useSelector } from 'react-redux';
+import Account from './Account';
+
 
 const useStyles = makeStyles({
   appBar: {
@@ -41,7 +42,7 @@ function Header(){
             <SvgIcon className={classes.svgIcon}>
               <Bell></Bell>
             </SvgIcon>
-            <Avatar alt="Lairson" src={account.user && account.user.avatar} />
+            <Account />
         </div>
       </Toolbar>
     </AppBar>
