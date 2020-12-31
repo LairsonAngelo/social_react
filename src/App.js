@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from './pages/Home';
+import SignIn from './pages/SignIn';
+import {ThemeProvider} from '@material-ui/core/styles';
+import theme from './theme';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import './mock';
+import GuestRoute from './routes/GuestRoute';
+import {Provider} from 'react-redux';
+import store from './store';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>    
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <GuestRoute path='/signin' element={<SignIn />} />
+            <Route path='*' element={<h1>404!</h1>} />
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
+    </Provider>
   );
 }
 

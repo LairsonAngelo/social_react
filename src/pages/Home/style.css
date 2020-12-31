@@ -1,0 +1,28 @@
+.header{
+  background: red;
+  width: 100%;
+  position: fixed;
+}
+.toolBar{
+  display: flex;
+  align-items: center;
+  height: 64px;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+.main{
+  height: 100vh;
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+}
+.navbar{
+  width: 350px;
+  background: darkblue;
+  padding: 24px;
+}
+.feed{
+  background: darkgoldenrod;
+  width: 100%;
+  padding: 24px;
+}
